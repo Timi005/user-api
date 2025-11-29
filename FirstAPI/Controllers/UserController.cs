@@ -41,7 +41,7 @@ namespace FirstAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<User>> AddBook(User newUser)
+        public async Task<ActionResult<User>> AddUser(User newUser)
         {
             if (newUser == null)
                 return BadRequest();
@@ -53,7 +53,7 @@ namespace FirstAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateBook(int id, User updatedUser)
+        public async Task<IActionResult> UpdateUser(int id, User updatedUser)
         {
             var user = await _context.Users.FindAsync(id);
             if (user == null)
